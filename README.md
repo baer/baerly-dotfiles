@@ -72,7 +72,6 @@ Defined in `zsh/aliases.zsh`:
 
 - `..`, `...` — Quick navigation
 - `reload!` — Re-source `~/.zshrc`
-- `reload!!` — Re-source `~/.zshrc` and clear the screen
 - `dotup` — Re-run `script/bootstrap` from any directory
 - `path` — Pretty-print `$PATH` (one entry per line)
 - `pubkey` — Copy SSH public key to clipboard

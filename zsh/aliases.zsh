@@ -13,7 +13,6 @@ alias ...="cd ../.."
 
 # Shortcuts
 alias reload!='. ~/.zshrc'
-alias reload!!='. ~/.zshrc && clear'
 alias path='echo -e ${PATH//:/\\n}'
 
 # Start an HTTP server in the current directory
