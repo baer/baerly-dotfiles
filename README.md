@@ -72,8 +72,9 @@ Defined in `zsh/aliases.zsh`:
 
 - `..`, `...` — Quick navigation
 - `reload!` — Re-source `~/.zshrc`
+- `reload!!` — Re-source `~/.zshrc` and clear the screen
+- `dotup` — Re-run `script/bootstrap` from any directory
 - `path` — Pretty-print `$PATH` (one entry per line)
-- `ip` — Show public IP address
 - `pubkey` — Copy SSH public key to clipboard
 - `rm`, `cp`, `mv` — Wrapped with `-i` for confirmation prompts
 - `ls`, `ll`, `tree` — eza-powered (falls back to GNU ls)

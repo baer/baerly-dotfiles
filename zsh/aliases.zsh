@@ -13,6 +13,7 @@ alias ...="cd ../.."
 
 # Shortcuts
 alias reload!='. ~/.zshrc'
+alias reload!!='. ~/.zshrc && clear'
 alias path='echo -e ${PATH//:/\\n}'
 
 # Start an HTTP server in the current directory
@@ -26,14 +27,8 @@ serve() {
   fi
 }
 
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
 # Copy my public key to the pasteboard
 alias pubkey="pbcopy < ~/.ssh/id_ed25519.pub && printf '=> Public key copied to pasteboard.\n'"
-
-# Print the gzipped size of the contents of the clipboard
-alias gsize="pbpaste | gzip | wc -c"
 
 # Update forked repo from upstream
 unalias updatefork 2>/dev/null
@@ -55,10 +50,10 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 # ----------------------------------------------------------------------
-# Homebrew
+# Dotfiles
 # ----------------------------------------------------------------------
 
-alias brewup='$ZSH/script/brew-update'
+alias dotup='$ZSH/script/bootstrap'
 
 # ----------------------------------------------------------------------
 # Git TUI
