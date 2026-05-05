@@ -64,6 +64,7 @@ brew 'zsh-fast-syntax-highlighting'
 
 # Managed applications and fonts.
 cask '1password'
+cask 'antigravity'
 cask 'audacity'
 cask 'claude'
 cask 'cloudflare-warp'
