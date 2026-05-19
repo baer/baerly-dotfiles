@@ -108,6 +108,7 @@
 [commit]
         cleanup = scissors
         verbose = true
+	gpgsign = true
 
 [merge]
         log = true
@@ -174,3 +175,7 @@
 
 [includeIf "gitdir:/usr/local/Homebrew/Library/Taps/"]
         path = ~/.gitconfig-homebrew
+[gpg]
+	format = ssh
+[user]
+	signingkey = /Users/eric.baer/.ssh/id_ed25519.pub
