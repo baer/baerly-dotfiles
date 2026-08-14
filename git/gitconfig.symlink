@@ -134,7 +134,7 @@
         prune = true
         prunetags = true
         all = true
-        fsckObjects = true
+        fsckObjects = false
 
 [push]
         autoSetupRemote = true
@@ -155,7 +155,7 @@
         autocorrect = prompt
 
 [transfer]
-        fsckObjects = true
+        fsckObjects = false
 
 [receive]
         fsckObjects = true
