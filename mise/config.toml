@@ -1,6 +1,7 @@
 [tools]
 bun = "latest"
 node = "lts"
+"npm:@owloops/claude-powerline" = "latest"
 "npm:typescript" = "latest"
 "npm:typescript-language-server" = "latest"
 pnpm = "latest"
