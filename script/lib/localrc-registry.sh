@@ -15,7 +15,7 @@ _localrc_registry_group_label() {
   case "$1" in
     editor) printf '%s\n' "Editor and agent" ;;
     xdg) printf '%s\n' "XDG base directories" ;;
-    homebrew) printf '%s\n' "Homebrew skip lists" ;;
+    homebrew) printf '%s\n' "Homebrew" ;;
     *) return 1 ;;
   esac
 }
@@ -24,7 +24,7 @@ _localrc_registry_vars_in() {
   case "$1" in
     editor) printf '%s\n' EDITOR E_EDITOR AGENT ;;
     xdg) printf '%s\n' XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME XDG_STATE_HOME ;;
-    homebrew) printf '%s\n' HOMEBREW_BUNDLE_CASK_SKIP HOMEBREW_BUNDLE_MAS_SKIP ;;
+    homebrew) printf '%s\n' HOMEBREW_BUNDLE_CASK_SKIP HOMEBREW_BUNDLE_MAS_SKIP HOMEBREW_TRUSTED_TAPS ;;
     *) return 1 ;;
   esac
 }
@@ -45,7 +45,7 @@ _localrc_registry_default() {
     XDG_DATA_HOME) printf '%s\n' "\$HOME/.local/share" ;;
     XDG_CACHE_HOME) printf '%s\n' "\$HOME/.cache" ;;
     XDG_STATE_HOME) printf '%s\n' "\$HOME/.local/state" ;;
-    HOMEBREW_BUNDLE_CASK_SKIP|HOMEBREW_BUNDLE_MAS_SKIP) : ;;
+    HOMEBREW_BUNDLE_CASK_SKIP|HOMEBREW_BUNDLE_MAS_SKIP|HOMEBREW_TRUSTED_TAPS) : ;;
     *) return 1 ;;
   esac
 }
@@ -61,6 +61,7 @@ _localrc_registry_description() {
     XDG_STATE_HOME) printf '%s\n' "Base directory for local state" ;;
     HOMEBREW_BUNDLE_CASK_SKIP) printf '%s\n' "Homebrew casks to skip on this machine (space-separated)" ;;
     HOMEBREW_BUNDLE_MAS_SKIP) printf '%s\n' "Mac App Store IDs to skip on this machine (space-separated)" ;;
+    HOMEBREW_TRUSTED_TAPS) printf '%s\n' "Non-official taps to trust before brew bundle (space-separated, e.g. gusto/gusto)" ;;
     *) return 1 ;;
   esac
 }

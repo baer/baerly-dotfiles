@@ -429,6 +429,8 @@ else
     eval "$_saved_opts"
   fi
 
+  brew_trust_taps
+
   brew_run_update
   brew_run_upgrade
   brew_run_bundle

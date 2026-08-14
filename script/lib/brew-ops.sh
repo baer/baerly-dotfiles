@@ -73,6 +73,28 @@ brew_run_upgrade() {
 }
 
 # ---------------------------------------------------------------------------
+# brew_trust_taps — trust non-official taps before bundling
+#
+# Recent Homebrew refuses to load casks (and warns on formulae) from untrusted
+# third-party taps. Reads HOMEBREW_TRUSTED_TAPS (space-separated, from
+# ~/.localrc) and trusts each. Idempotent; no-op when the var is unset.
+# ---------------------------------------------------------------------------
+
+brew_trust_taps() {
+  [[ -n "${HOMEBREW_TRUSTED_TAPS:-}" ]] || return 0
+
+  local _tap
+  for _tap in $HOMEBREW_TRUSTED_TAPS; do
+    if $VERBOSE; then
+      log_info "brew trust $_tap"
+      brew trust "$_tap" 2>&1 | tee -a "$LOGFILE" || true
+    else
+      brew trust "$_tap" >> "$LOGFILE" 2>&1 || true
+    fi
+  done
+}
+
+# ---------------------------------------------------------------------------
 # brew_run_bundle — install from Brewfile, compute summary
 #
 # Sets _BREW_SUMMARY (e.g. "3 installed, 1 upgraded" or "all up to date").

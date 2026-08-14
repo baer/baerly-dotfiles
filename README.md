@@ -121,6 +121,8 @@ script/brew-skip-detect
 
 Running `dot` on a work machine without the skip list configured will print a reminder.
 
+Recent Homebrew refuses to load casks (and warns on formulae) from untrusted non-official taps. If a work Brewfile pulls from third-party taps — e.g. `gdev setup` bundling `gusto/gusto`, `pact-foundation/tap`, `f1bonacc1/tap` — list them in `HOMEBREW_TRUSTED_TAPS` in `~/.localrc` (space-separated) and `script/bootstrap` / `script/brew-update` will `brew trust` each before bundling. Trust is global machine state, so it also unblocks `brew bundle` runs driven by other tools.
+
 ## `~/.localrc`
 
 Machine-specific config that shouldn't be committed goes in `~/.localrc` (git-ignored). It's sourced first in the zsh loading order.

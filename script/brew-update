@@ -96,9 +96,11 @@ if ! command -v brew &>/dev/null; then
   exit 1
 fi
 
-# Source localrc for HOMEBREW_BUNDLE_CASK_SKIP
+# Source localrc for HOMEBREW_BUNDLE_CASK_SKIP and HOMEBREW_TRUSTED_TAPS
 # shellcheck disable=SC1091
 [[ -f "$HOME/.localrc" ]] && source "$HOME/.localrc"
+
+brew_trust_taps
 
 # Cask skip detection — save/restore shell options since brew-skip-detect uses set -euo pipefail
 if [[ -f "$DOTFILES_ROOT/script/brew-skip-detect" ]]; then

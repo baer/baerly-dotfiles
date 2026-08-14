@@ -51,5 +51,5 @@ setup() {
 @test "_localrc_registry_all_vars enumerates every var across groups" {
   run _localrc_registry_all_vars
   [ "$status" -eq 0 ]
-  [ "${#lines[@]}" -eq 9 ]
+  [ "${#lines[@]}" -eq 10 ]
 }

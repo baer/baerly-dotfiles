@@ -82,7 +82,7 @@ setup() {
   [[ "$output" == *"# Default: code"* ]]
   [[ "$output" == *"# export E_EDITOR=\"code\""* ]]
   [[ "$output" == *"# ───── XDG base directories ─────"* ]]
-  [[ "$output" == *"# ───── Homebrew skip lists ─────"* ]]
+  [[ "$output" == *"# ───── Homebrew ─────"* ]]
   [[ "$output" == *"# <<< dotfiles localrc <<<"* ]]
 }
 
