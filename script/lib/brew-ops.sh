@@ -45,7 +45,7 @@ brew_run_update() {
 brew_run_upgrade() {
   if $VERBOSE; then
     log_info "brew upgrade..."
-    if brew upgrade 2>&1 | tee -a "$LOGFILE"; then
+    if brew upgrade --yes 2>&1 | tee -a "$LOGFILE"; then
       log_success "brew upgrade"
     else
       local _upgrade_tail
@@ -58,7 +58,7 @@ brew_run_upgrade() {
     fi
   else
     substep_start "brew upgrade"
-    if brew upgrade >> "$LOGFILE" 2>&1; then
+    if brew upgrade --yes >> "$LOGFILE" 2>&1; then
       substep_stop ok "brew upgrade"
     else
       local _upgrade_tail
